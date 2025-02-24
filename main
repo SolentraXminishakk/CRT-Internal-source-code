@@ -1458,3 +1458,5 @@ local function FHGB_fake_script() -- TopbarSettings.ToggleKey
 	end)
 end
 coroutine.wrap(FHGB_fake_script)()
+
+game.StarterGui:SetCore("SendNotification", {Title="Internal Loaded!"; Text="Press Delete to open/close."; Duration=5;})

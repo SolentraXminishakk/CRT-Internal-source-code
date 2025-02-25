@@ -19,6 +19,8 @@ end
 
 getgenv().__IS_LOADED = true
 
+-- Instances
+
 local UIs = Instance.new("ScreenGui")
 local TopbarExecutor = Instance.new("Frame")
 local Executor = Instance.new("Frame")
@@ -160,7 +162,7 @@ logs.Position = UDim2.new(0.027777778, 0, 0.053497944, 0)
 logs.Size = UDim2.new(0, 510, 0, 217)
 logs.ClearTextOnFocus = false
 logs.Font = Enum.Font.SourceSans
-logs.Text = "CRT Injected! And Internal loaded."
+logs.Text = "CRT Injected!"
 logs.TextColor3 = Color3.new(1, 1, 1)
 logs.TextSize = 24
 logs.TextXAlignment = Enum.TextXAlignment.Left
@@ -284,7 +286,7 @@ TopbarSettings.Parent = UIs
 TopbarSettings.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 TopbarSettings.BorderColor3 = Color3.new(0, 0, 0)
 TopbarSettings.BorderSizePixel = 0
-TopbarSettings.Position = UDim2.new(0.416141957, 0, 0.542387545, 0)
+TopbarSettings.Position = UDim2.new(0.718946755, 0, 0.115916952, 0)
 TopbarSettings.Size = UDim2.new(0, 316, 0, 66)
 TopbarSettings.Visible = false
 
@@ -382,24 +384,26 @@ Black.TextSize = 31
 
 -- Scripts
 
-local function KSWA_fake_script() -- Execute.ExecuteScript 
+local function DRKBA_fake_script() -- Execute.ExecuteScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	local textbox = script.Parent.Parent.TextBox
+	local Console = game.Players.LocalPlayer.PlayerGui.UIs.TopbarConsole.Console.logs
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(textbox.Text)()
+		Console.Writeline = "Executed a script."
 	end)
 end
-coroutine.wrap(KSWA_fake_script)()
-local function KWKL_fake_script() -- Leave.LeaveGame 
+coroutine.wrap(DRKBA_fake_script)()
+local function FVDMAGU_fake_script() -- Leave.LeaveGame 
 	local script = Instance.new('LocalScript', Leave)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer:Kick()
 	end)
 end
-coroutine.wrap(KWKL_fake_script)()
-local function AQGN_fake_script() -- Clear.ClearEditor 
+coroutine.wrap(FVDMAGU_fake_script)()
+local function RMBYQ_fake_script() -- Clear.ClearEditor 
 	local script = Instance.new('LocalScript', Clear)
 
 	local textbox = script.Parent.Parent.TextBox
@@ -407,8 +411,8 @@ local function AQGN_fake_script() -- Clear.ClearEditor
 		textbox.Text = ""
 	end)
 end
-coroutine.wrap(AQGN_fake_script)()
-local function VKFCL_fake_script() -- TopbarExecutor.ToggleKey 
+coroutine.wrap(RMBYQ_fake_script)()
+local function WYBXFNA_fake_script() -- TopbarExecutor.ToggleKey 
 	local script = Instance.new('LocalScript', TopbarExecutor)
 
 	local Executor = script.Parent
@@ -424,22 +428,22 @@ local function VKFCL_fake_script() -- TopbarExecutor.ToggleKey
 		end
 	end)
 end
-coroutine.wrap(VKFCL_fake_script)()
-local function ZKNN_fake_script() -- TopbarExecutor.Dragging 
+coroutine.wrap(WYBXFNA_fake_script)()
+local function YUVDLI_fake_script() -- TopbarExecutor.Dragging 
 	local script = Instance.new('LocalScript', TopbarExecutor)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 end
-coroutine.wrap(ZKNN_fake_script)()
-local function CFVFE_fake_script() -- TopbarConsole.Dragging 
+coroutine.wrap(YUVDLI_fake_script)()
+local function CIDNL_fake_script() -- TopbarConsole.Dragging 
 	local script = Instance.new('LocalScript', TopbarConsole)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 end
-coroutine.wrap(CFVFE_fake_script)()
-local function YOUPEM_fake_script() -- TopbarConsole.ToggleKey 
+coroutine.wrap(CIDNL_fake_script)()
+local function SOXDOMH_fake_script() -- TopbarConsole.ToggleKey 
 	local script = Instance.new('LocalScript', TopbarConsole)
 
 	local Executor = script.Parent
@@ -455,40 +459,40 @@ local function YOUPEM_fake_script() -- TopbarConsole.ToggleKey
 		end
 	end)
 end
-coroutine.wrap(YOUPEM_fake_script)()
-local function ICEPY_fake_script() -- IY.InfYield 
+coroutine.wrap(SOXDOMH_fake_script)()
+local function ZEONG_fake_script() -- IY.InfYield 
 	local script = Instance.new('LocalScript', IY)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 	end)
 end
-coroutine.wrap(ICEPY_fake_script)()
-local function QAIHR_fake_script() -- DarkDex.DD 
+coroutine.wrap(ZEONG_fake_script)()
+local function LEWMG_fake_script() -- DarkDex.DD 
 	local script = Instance.new('LocalScript', DarkDex)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 	end)
 end
-coroutine.wrap(QAIHR_fake_script)()
-local function XNFI_fake_script() -- ESP.ESPScript 
+coroutine.wrap(LEWMG_fake_script)()
+local function PPGPY_fake_script() -- ESP.ESPScript 
 	local script = Instance.new('LocalScript', ESP)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
 	end)
 end
-coroutine.wrap(XNFI_fake_script)()
-local function QIROFO_fake_script() -- Aimbot.UniversalAimbot 
+coroutine.wrap(PPGPY_fake_script)()
+local function WRUV_fake_script() -- Aimbot.UniversalAimbot 
 	local script = Instance.new('LocalScript', Aimbot)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Open-Aimbot/master/source.lua", true))()
 	end)
 end
-coroutine.wrap(QIROFO_fake_script)()
-local function EBLJS_fake_script() -- UNC.UNCTest 
+coroutine.wrap(WRUV_fake_script)()
+local function CJVVBG_fake_script() -- UNC.UNCTest 
 	local script = Instance.new('LocalScript', UNC)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -1365,16 +1369,16 @@ local function EBLJS_fake_script() -- UNC.UNCTest
 		end)
 	end)
 end
-coroutine.wrap(EBLJS_fake_script)()
-local function GYMYWBJ_fake_script() -- Vuln.VulnTest 
+coroutine.wrap(CJVVBG_fake_script)()
+local function WBBP_fake_script() -- Vuln.VulnTest 
 	local script = Instance.new('LocalScript', Vuln)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/fissurectomy/test/main/executor_vuln_test.lua"))()
 	end)
 end
-coroutine.wrap(GYMYWBJ_fake_script)()
-local function KOEIS_fake_script() -- TopbarScriptHub.ToggleKey 
+coroutine.wrap(WBBP_fake_script)()
+local function SWXQO_fake_script() -- TopbarScriptHub.ToggleKey 
 	local script = Instance.new('LocalScript', TopbarScriptHub)
 
 	local Executor = script.Parent
@@ -1390,15 +1394,15 @@ local function KOEIS_fake_script() -- TopbarScriptHub.ToggleKey
 		end
 	end)
 end
-coroutine.wrap(KOEIS_fake_script)()
-local function BKPER_fake_script() -- TopbarScriptHub.Dragging 
+coroutine.wrap(SWXQO_fake_script)()
+local function PBTG_fake_script() -- TopbarScriptHub.Dragging 
 	local script = Instance.new('LocalScript', TopbarScriptHub)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 end
-coroutine.wrap(BKPER_fake_script)()
-local function WBKIYS_fake_script() -- Default.DefaultEditor 
+coroutine.wrap(PBTG_fake_script)()
+local function XDBE_fake_script() -- Default.DefaultEditor 
 	local script = Instance.new('LocalScript', Default)
 
 	local Editor = game.Players.LocalPlayer.PlayerGui.UIs.TopbarExecutor.Executor.TextBox
@@ -1408,8 +1412,8 @@ local function WBKIYS_fake_script() -- Default.DefaultEditor
 		Editor.TextColor3 = Color3.fromRGB(255,255,255)
 	end)
 end
-coroutine.wrap(WBKIYS_fake_script)()
-local function ULOII_fake_script() -- White.WhiteEditor 
+coroutine.wrap(XDBE_fake_script)()
+local function QXIWDV_fake_script() -- White.WhiteEditor 
 	local script = Instance.new('LocalScript', White)
 
 	local Editor = game.Players.LocalPlayer.PlayerGui.UIs.TopbarExecutor.Executor.TextBox
@@ -1419,8 +1423,8 @@ local function ULOII_fake_script() -- White.WhiteEditor
 		Editor.TextColor3 = Color3.fromRGB(0,0,0)
 	end)
 end
-coroutine.wrap(ULOII_fake_script)()
-local function RUHOVB_fake_script() -- Red.RedEditor 
+coroutine.wrap(QXIWDV_fake_script)()
+local function NEJLDK_fake_script() -- Red.RedEditor 
 	local script = Instance.new('LocalScript', Red)
 
 	local Editor = game.Players.LocalPlayer.PlayerGui.UIs.TopbarExecutor.Executor.TextBox
@@ -1430,8 +1434,8 @@ local function RUHOVB_fake_script() -- Red.RedEditor
 		Editor.TextColor3 = Color3.fromRGB(255,255,255)
 	end)
 end
-coroutine.wrap(RUHOVB_fake_script)()
-local function TNQEM_fake_script() -- Blue.BlueEditor 
+coroutine.wrap(NEJLDK_fake_script)()
+local function UMVA_fake_script() -- Blue.BlueEditor 
 	local script = Instance.new('LocalScript', Blue)
 
 	local Editor = game.Players.LocalPlayer.PlayerGui.UIs.TopbarExecutor.Executor.TextBox
@@ -1441,8 +1445,8 @@ local function TNQEM_fake_script() -- Blue.BlueEditor
 		Editor.TextColor3 = Color3.fromRGB(255,255,255)
 	end)
 end
-coroutine.wrap(TNQEM_fake_script)()
-local function LGLFEM_fake_script() -- Black.BlackEditor 
+coroutine.wrap(UMVA_fake_script)()
+local function PYINRH_fake_script() -- Black.BlackEditor 
 	local script = Instance.new('LocalScript', Black)
 
 	local Editor = game.Players.LocalPlayer.PlayerGui.UIs.TopbarExecutor.Executor.TextBox
@@ -1452,15 +1456,15 @@ local function LGLFEM_fake_script() -- Black.BlackEditor
 		Editor.TextColor3 = Color3.fromRGB(255,255,255)
 	end)
 end
-coroutine.wrap(LGLFEM_fake_script)()
-local function GSWLLX_fake_script() -- TopbarSettings.Dragging 
+coroutine.wrap(PYINRH_fake_script)()
+local function YCGXZBK_fake_script() -- TopbarSettings.Dragging 
 	local script = Instance.new('LocalScript', TopbarSettings)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 end
-coroutine.wrap(GSWLLX_fake_script)()
-local function FHGB_fake_script() -- TopbarSettings.ToggleKey 
+coroutine.wrap(YCGXZBK_fake_script)()
+local function ZLUPEO_fake_script() -- TopbarSettings.ToggleKey 
 	local script = Instance.new('LocalScript', TopbarSettings)
 
 	local Executor = script.Parent
@@ -1476,6 +1480,4 @@ local function FHGB_fake_script() -- TopbarSettings.ToggleKey
 		end
 	end)
 end
-coroutine.wrap(FHGB_fake_script)()
-
-game.StarterGui:SetCore("SendNotification", {Title="Internal Loaded!"; Text="Press Delete to open/close."; Duration=5;})
+coroutine.wrap(ZLUPEO_fake_script)()

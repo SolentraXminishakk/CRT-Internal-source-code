@@ -1,4 +1,23 @@
---Luv you guys❤️
+--[[
+---------------		|------------        ---------------
+|			|	    |		    |
+|			|	    |		    |
+|			|	    |		    |
+|			|	    |		    |
+|			|	    |		    |
+|			|------------		    |
+|			||                          |
+|			| \\                        |
+|			|  -/                       |
+|			|   \/			    |
+|---------------        |    ||                     |
+]]--
+
+if getgenv().__IS_LOADED then
+	error("This script is already loaded!")
+end
+
+getgenv().__IS_LOADED = true
 
 local UIs = Instance.new("ScreenGui")
 local TopbarExecutor = Instance.new("Frame")
